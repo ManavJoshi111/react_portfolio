@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-white: #fff;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: orange !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.0475rem;
+  margin: 3px;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  color: var(--primary-white) !important;
+  transition: 0.5s;
+}
+
+.nav-link:hover {
+  color: orange !important;
+  cursor: pointer;
+}
