@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.leftcontainer {
+  width: 50%;
+}
+
+.rightcontainer {
+  width: 50%;
+}
+
+.marginanim {
+  animation: anim 2.4s infinite;
+  padding-top: 10px;
+}
+
+.marginanim:hover {
+  margin-top: 10px;
+}
+
+.btn {
+  border: 2px solid orange !important;
+}
+
+.btn:hover {
+  color: white;
+  background-color: orange !important;
+}
+@keyframes anim {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ******* MEDIA QUERIS ******** */
+
+@media screen and (max-width: 768px) {
+  .marginanim {
+    animation: none;
+  }
+  .leftcontainer,
+  .rightcontainer {
+    width: 100%;
+  }
+}
