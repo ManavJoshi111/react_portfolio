@@ -7,9 +7,30 @@
   margin: 10px;
   transition: 1s;
   cursor: default;
+  border: 1px solid rgb(71, 71, 71);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.04);
+}
+
+.card-title {
+  color: #514538;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.card-text {
+  color: #5b1a00;
+  font-weight: bold;
+}
+.card-link {
+  color: orange !important;
+  font-weight: bold;
+}
+
+.card-link:hover {
+  color: rgb(250, 31, 31) !important;
 }

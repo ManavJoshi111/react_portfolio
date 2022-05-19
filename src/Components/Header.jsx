@@ -1,6 +1,15 @@
 import React from "react";
 import Typed from "react-typed";
 import "./header.css";
+import About from "./About";
+import Error from "./Error";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Routes,
+  NavLink,
+} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -30,11 +39,15 @@ const Header = () => {
               loop
             ></Typed>
           </p>
-          <a href="" className="btn btn-container btn-main-offer">
-            Download CV
-          </a>
+          <NavLink to="/about" className="btn btn-container btn-main-offer">
+            Let's Get Started
+          </NavLink>
         </div>
       </div>
+      <Routes>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/" elemnent={<Error />}></Route>
+      </Routes>
     </>
   );
 };

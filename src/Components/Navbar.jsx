@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.css";
 import myImg from "../Images/M_Logo.png";
 import About from "./About";
+import Error from "./Error";
 import {
   BrowserRouter as Router,
   Link,
@@ -56,15 +57,6 @@ const Navbar = () => {
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
-                  to="/projects"
-                >
-                  Projects
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
                   to="/Contact"
                 >
                   Contact
@@ -77,8 +69,7 @@ const Navbar = () => {
       <Routes>
         <Route exact path="/" element={<Header />}></Route>
         <Route path="/about" element={<About />}></Route>
-        {/* <Route path="/projects" element={<Projects />}></Route> */}
-        {/* <Route path="*" element={<Error />}></Route> */}
+        <Route path="*" element={<Error />}></Route>
       </Routes>
     </Router>
   );

@@ -13,15 +13,18 @@
   width: 50%;
 }
 
+.rightcontainer center p {
+  text-align: justify;
+}
+
 .marginanim {
   animation: anim 2.4s infinite;
   padding-top: 10px;
 }
 
-.marginanim:hover {
-  margin-top: 10px;
+#hey {
+  color: orange;
 }
-
 .btn {
   border: 2px solid orange !important;
 }
@@ -30,6 +33,12 @@
   color: white;
   background-color: orange !important;
 }
+
+.titleproj {
+  margin-left: 20px;
+  font-size: 3.1rem;
+}
+
 @keyframes anim {
   0% {
     transform: translateY(0px);

@@ -1,0 +1,16 @@
+.h1 {
+  font-size: 8em;
+}
+.error {
+  font-size: 120px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-fluid {
+    display: none;
+  }
+  .leftcontainer,
+  .rightcontainer {
+    width: 100%;
+  }
+}

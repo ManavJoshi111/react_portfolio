@@ -1,24 +1,28 @@
 import React from "react";
-const style = {
-  position: "fixed",
-  left: "0",
+
+const size = {
+  postition: "relative",
+  width: "100%",
+  height: "70px",
   bottom: "0",
-  width: "100vw",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "85px",
-  background: "#222222",
-  textAlign: "center",
-  fontWeight: "bold",
-  fontSize: "1.2rem",
+};
+
+const spanstyle = {
+  color: "orange",
+  fontWeight: "bolder",
 };
 const Footer = () => {
   return (
     <>
-      <div className="text-warning" style={style}>
-        <p className="">Created With 🧡 by Manav Joshi</p>
-      </div>
+      <footer
+        className="bg-dark text-center text-white d-flex justify-content-center align-items-center"
+        style={size}
+      >
+        <div className="text-center">
+          Developed & Designed With 🧡 by{" "}
+          <span style={spanstyle}>Manav Joshi</span>
+        </div>
+      </footer>
     </>
   );
 };
