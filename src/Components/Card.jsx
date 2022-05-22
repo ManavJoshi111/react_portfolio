@@ -1,6 +1,6 @@
 import React from "react";
 import "./card.css";
-
+import Fade from "react-reveal/Fade";
 const Card = (props) => {
   return (
     <>

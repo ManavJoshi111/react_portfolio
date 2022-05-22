@@ -38,8 +38,9 @@
 }
 
 .titleproj {
+  color: brown;
   margin-left: 20px;
-  font-size: 3.1rem;
+  font-size: 2.9rem;
 }
 
 @keyframes anim {

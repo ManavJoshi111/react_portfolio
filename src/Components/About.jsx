@@ -4,6 +4,7 @@ import img from "../Images/AboutImg.png";
 import Card from "./Card";
 import Footer from "./Footer";
 import Path from "../Assets/Manav_Resume.pdf";
+import Fade from "react-reveal/Fade";
 
 const About = () => {
   return (
@@ -21,17 +22,16 @@ const About = () => {
               college, Vvnagar, Anand.
               <br />
               I was born and raised in Idar, Sabarkantha, Gujarat. I did my
-              schooling from Shri K.M. Patel Vidyamandir, Idar, and secured 2nd
-              rank in whole centre in HSC board examination.
+              schooling from Shri K.M. Patel Vidyamandir, Idar.
               <br />
               Apart from my studies, I am currently working as a publicity team
-              member in Vishvakarma Magazineof our college. I am working as a
-              core team member of GDSC ( Google Developer Student Clubs ) also.
-              <br /> I love to do many things like playing chess, listening to
-              music, and reading novels as well. I have read many books starting
-              from Durjoy Dutta, Chetan Bhagat to Mahabharata, and Bhagvadgeeta.
-              I like to travel and explore more places.
-              <br /> I am an introspecter and I like to be with myself the most.
+              member in Vishvakarma Magazine. I am working as a core team member
+              of GDSC ( Google Developer Student Clubs ) also.
+              <br /> I love to do various things like playing chess, listening
+              to music, and reading novels. I have read many books starting from
+              Durjoy Dutta, Chetan Bhagat to Mahabharata, and Bhagvadgeeta. I
+              like to travel and explore more places.
+              <br /> I am an introspecter who loves to be with himself the most.
             </p>
             <a
               type="button"
@@ -46,9 +46,9 @@ const About = () => {
         </div>
       </div>
       <h2 className="titleproj">Projects - Made By Me</h2>
-      <div className="container-fluid d-flex flex-column flex-md-row justify-content-center align-items-center ">
+      <div className="container-fluid d-flex flex-column flex-md-row justify-content-center align-items-center mt-4">
         <Card
-          title="Cronux - An OTT Platform"
+          title="Cronux - A Streaming Platform"
           link="https://github.com/ManavJoshi111/Cronux"
           desc="Cronux is a full-stack OTT Platform which provides Movies and TV
           Shows. This project was made in a group of two. Users can create their
@@ -66,10 +66,10 @@ const About = () => {
           className="card"
         />
         <Card
-          title="Weather App Using React"
+          title="WeCheck - A Weather App"
           link="https://github.com/ManavJoshi111/WeatherAppWithReact"
           desc="It is a simple web app that gives the minimum and maximum temperature
-          of the city which you search
+          of the city which you search.
           I used an open API to find the temperature"
           tech="React"
           className="card"
