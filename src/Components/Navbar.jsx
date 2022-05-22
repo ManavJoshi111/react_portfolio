@@ -6,7 +6,6 @@ import Error from "./Error";
 import Contact from "./Contact";
 import {
   BrowserRouter as Router,
-  Link,
   Route,
   Routes,
   NavLink,

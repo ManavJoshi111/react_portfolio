@@ -4,13 +4,7 @@ import "./header.css";
 import About from "./About";
 import Error from "./Error";
 import Fade from "react-reveal/Fade";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Routes,
-  NavLink,
-} from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (

@@ -10,8 +10,6 @@ const footerstyle = {
   postition: "relative",
   width: "100%",
   height: "70px",
-  bottom: "0",
-  postition: "relative",
   bottom: "0 !important",
 };
 const Footer = () => {

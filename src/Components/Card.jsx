@@ -1,6 +1,5 @@
 import React from "react";
 import "./card.css";
-import Fade from "react-reveal/Fade";
 const Card = (props) => {
   return (
     <>
@@ -9,7 +8,12 @@ const Card = (props) => {
           <h5 className="card-title h3">{props.title}</h5>
           <p className="card-text">{props.desc} </p>
           <p className="card-text">Technologies Used : {props.tech} </p>
-          <a href={props.link} className="card-link h5" target="_blank">
+          <a
+            href={props.link}
+            className="card-link h5"
+            target="_blank"
+            rel="noreferrer"
+          >
             See Project
           </a>
         </div>

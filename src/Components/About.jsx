@@ -4,7 +4,6 @@ import img from "../Images/AboutImg.png";
 import Card from "./Card";
 import Footer from "./Footer";
 import Path from "../Assets/Manav_Resume.pdf";
-import Fade from "react-reveal/Fade";
 
 const About = () => {
   return (

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Routes,
-  NavLink,
-} from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 import Home from "./Header";
 import "./error.css";
 import Error_Pic from "../Images/404_Page.png";

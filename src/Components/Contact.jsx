@@ -49,6 +49,7 @@ const Contact = () => {
                   href="https://github.com/ManavJoshi111"
                   className="iconlink"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <GitHubIcon className="icon mx-3" />
                 </a>
@@ -56,6 +57,7 @@ const Contact = () => {
                   href="https://twitter.com/Man___111"
                   className="iconlink"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <TwitterIcon className="icon mx-3" />
                 </a>
@@ -63,6 +65,7 @@ const Contact = () => {
                   href="https://www.instagram.com/man_joshi_111/"
                   className="iconlink"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <InstagramIcon className="icon mx-3" />
                 </a>
@@ -70,6 +73,7 @@ const Contact = () => {
                   href="https://m.facebook.com/profile.php?id=100070915911380&refsrc=deprecated&_rdr"
                   className="iconlink"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FacebookIcon className="icon mx-3" />
                 </a>
@@ -77,6 +81,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/manav-joshi-9a284b20b/"
                   className="iconlink"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <LinkedInIcon className="icon mx-3" />
                 </a>
