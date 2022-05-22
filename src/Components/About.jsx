@@ -3,6 +3,7 @@ import "./about.css";
 import img from "../Images/AboutImg.png";
 import Card from "./Card";
 import Footer from "./Footer";
+import Path from "../Assets/Manav_Resume.pdf";
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
         <div className="rightcontainer">
           <h2 id="hey">Hey There...</h2>
           <center>
-            <p>
+            <p id="intro">
               Myself Manav Joshi. Currently, I am pursuing my B.Tech in Computer
               Engineering at Birla Vishvakarma Mahavidyalaya Engineering
               college, Vvnagar, Anand.
@@ -32,14 +33,20 @@ const About = () => {
               I like to travel and explore more places.
               <br /> I am an introspecter and I like to be with myself the most.
             </p>
-            <button type="button" className="btn btn-outline-dark">
+            <a
+              type="button"
+              href={Path}
+              className="btn btn-outline-dark"
+              target="_href"
+              downlaod="true"
+            >
               Download CV
-            </button>
+            </a>
           </center>
         </div>
       </div>
       <h2 className="titleproj">Projects - Made By Me</h2>
-      <div className="container-fluid d-flex flex-column flex-md-row justify-content-center align-items-center">
+      <div className="container-fluid d-flex flex-column flex-md-row justify-content-center align-items-center ">
         <Card
           title="Cronux - An OTT Platform"
           link="https://github.com/ManavJoshi111/Cronux"

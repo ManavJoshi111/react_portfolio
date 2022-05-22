@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +11,8 @@
 
 .rightcontainer {
   width: 50%;
+  font-family: "Hahmlet", serif;
+  transition: 1s;
 }
 
 .rightcontainer center p {
@@ -25,6 +27,7 @@
 #hey {
   color: orange;
 }
+
 .btn {
   border: 2px solid orange !important;
 }

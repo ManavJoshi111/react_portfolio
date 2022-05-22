@@ -3,6 +3,7 @@ import "./navbar.css";
 import myImg from "../Images/M_Logo.png";
 import About from "./About";
 import Error from "./Error";
+import Contact from "./Contact";
 import {
   BrowserRouter as Router,
   Link,
@@ -40,13 +41,20 @@ const Navbar = () => {
           >
             <ul className="navbar-nav ms-auto me-5">
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
+                <NavLink
+                  className={({ isActive }) =>
+                    "nav-link active" + (isActive ? " active_class" : "")
+                  }
+                  to="/"
+                >
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active"
+                  className={({ isActive }) =>
+                    "nav-link active" + (isActive ? " active_class" : "")
+                  }
                   aria-current="page"
                   to="/about"
                 >
@@ -55,7 +63,9 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link active"
+                  className={({ isActive }) =>
+                    "nav-link active" + (isActive ? " active_class" : "")
+                  }
                   aria-current="page"
                   to="/Contact"
                 >
@@ -69,6 +79,7 @@ const Navbar = () => {
       <Routes>
         <Route exact path="/" element={<Header />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/Contact" element={<Contact />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
     </Router>

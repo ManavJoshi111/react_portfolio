@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-:root {
-  --primary-white: #fff;
-}
-
 .logoimg {
   margin-left: 20px;
 }
@@ -29,11 +25,15 @@ nav {
 
 .nav-link {
   text-transform: uppercase;
-  color: var(--primary-white) !important;
+  color: #fff !important;
   transition: 0.5s;
 }
 
 .nav-link:hover {
   color: orange !important;
   cursor: pointer;
+}
+
+.active_class {
+  color: orange !important;
 }

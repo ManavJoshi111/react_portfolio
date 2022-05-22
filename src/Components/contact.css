@@ -1,0 +1,65 @@
+.hey {
+  color: orange !important;
+  text-align: justify;
+  font-weight: 350;
+}
+
+.number {
+  text-decoration: none !important;
+  color: orange;
+  transition: 0.3s;
+}
+
+.heading,
+.number {
+  margin-left: 10px;
+}
+
+.number:hover {
+  color: orange;
+}
+
+.iconlink {
+  color: black;
+}
+.icon {
+  /* color: orange; */
+  transform: scale(1.7);
+  transition: 0.3s;
+}
+
+.icon:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.form-group label {
+  text-align: left;
+  float: left;
+  margin-left: 10px !important;
+}
+
+.submitbtn {
+  color: black !important;
+}
+
+.submitbtn:hover {
+  color: white !important;
+}
+
+.form-group .btn {
+  color: black !important;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0 !important;
+  transition: 0.1s;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-bottom: 3px solid orange;
+  outline: 0;
+}
