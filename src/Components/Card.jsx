@@ -3,7 +3,7 @@ import "./card.css";
 const Card = (props) => {
   return (
     <>
-      <div className="card">
+      <div className="card ">
         <div className="card-body">
           <h5 className="card-title h3">{props.title}</h5>
           <p className="card-text">{props.desc} </p>
@@ -15,6 +15,14 @@ const Card = (props) => {
             rel="noreferrer"
           >
             See Project
+          </a>
+          <a
+            href={props.github}
+            className="card-link h5 float-end"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See Code
           </a>
         </div>
       </div>

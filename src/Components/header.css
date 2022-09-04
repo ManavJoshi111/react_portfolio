@@ -1,3 +1,6 @@
+html{
+  min-height: 100vh;
+}
 .header-wrapper {
   position: relative;
   background: url("../Images/Header_Bg.gif");
