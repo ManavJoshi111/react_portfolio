@@ -1,9 +1,13 @@
+:root{
+  --future_pink: #ed3659;
+  --future_white: #ffffff;
+}
 html{
   min-height: 100vh;
 }
 .header-wrapper {
   position: relative;
-  background: url("../Images/Header_Bg.gif");
+  /* background: url("../Images/Header_Bg.gif"); */
   background-size: cover;
   background-position: center;
   height: 90vh;
@@ -23,21 +27,25 @@ html{
 }
 
 .main-info h1 {
-  color: #ffa500;
+  color: var(--future_pink);
   text-transform: uppercase;
 }
 
 .typed-text {
   font-size: 2rem;
-  color: white !important;
+  color: var(--future_white) !important;
 }
 
 .btn {
   margin-top: 6px;
-  background-color: orange;
+  background-color: var(--future_pink);
   text-transform: uppercase;
 }
 
+.btn{
+  color: black;
+}
+
 .btn:hover {
-  color: white;
+  color: var(--future_white) !important;
 }

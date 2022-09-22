@@ -7,8 +7,9 @@
   margin: 10px;
   transition: 1s;
   cursor: default;
-  border: 1px solid rgb(71, 71, 71);
+  border: 1px solid var(--future_pink);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  background-color: #000000;
   border-radius: 20px;
 }
 
@@ -17,20 +18,20 @@
 }
 
 .card-title {
-  color: rgb(65, 63, 63);
+  color: var(--future_pink);
   /* text-transform: uppercase; */
   font-weight: bolder;
 }
 
 .card-text {
-  color: #5b1a00;
-  font-weight: bold;
+  color: var(--future_white);
 }
 .card-link {
-  color: orange !important;
+  color: var(--future_pink) !important;
   font-weight: bold;
 }
 
 .card-link:hover {
+  cursor: pointer;
   color: rgb(250, 31, 31) !important;
 }

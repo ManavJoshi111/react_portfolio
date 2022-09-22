@@ -25,20 +25,20 @@
 }
 
 #hey {
-  color: orange;
+  color: var(--future_pink);
 }
 
 .btn {
-  border: 2px solid orange !important;
+  border: 2px solid var(--future_pink) !important;
 }
 
 .btn:hover {
-  color: white;
-  background-color: orange !important;
+  color: black !important;
+  background-color: var(--future_pink) !important;
 }
 
 .titleproj {
-  color: brown;
+  color: var(--future_pink);
   margin-left: 20px;
   font-size: 2.9rem;
 }

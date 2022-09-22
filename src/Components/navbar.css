@@ -7,14 +7,18 @@
   margin-left: 20px;
 }
 
-nav {
-  box-shadow: 0 10px 7px -6px #777;
+.bg-dark
+{
+  background-color: #000000 !important;
 }
+/* nav {
+  box-shadow: 0 10px 7px -6px #000000;
+} */
 
 .navbar-brand {
   font-weight: 600;
   font-size: 1.5rem;
-  color: orange !important;
+  color: var(--future_pink) !important;
 }
 
 .nav-link {
@@ -30,10 +34,10 @@ nav {
 }
 
 .nav-link:hover {
-  color: orange !important;
+  color: var(--future_pink) !important;
   cursor: pointer;
 }
 
 .active_class {
-  color: orange !important;
+  color:var(--future_pink) !important;
 }

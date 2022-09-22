@@ -1,12 +1,12 @@
 .hey {
-  color: orange !important;
+  color: var(--future_pink) !important;
   text-align: justify;
   font-weight: 350;
 }
 
 .number {
   text-decoration: none !important;
-  color: orange;
+  color: var(--future_pink);
   transition: 0.3s;
 }
 
@@ -16,20 +16,20 @@
 }
 
 .number:hover {
-  color: orange;
+  color: var(--future_pink);
 }
 
 .iconlink {
   color: black;
 }
 .icon {
-  /* color: orange; */
+  /* color: var(--future_pink); */
   transform: scale(1.7);
   transition: 0.3s;
 }
 
 .icon:hover {
-  color: orange;
+  color: var(--future_pink);
   cursor: pointer;
 }
 
@@ -40,11 +40,11 @@
 }
 
 .submitbtn {
-  color: black !important;
+  color: white !important;
 }
 
 .submitbtn:hover {
-  color: white !important;
+  color: black !important;
 }
 
 .form-group .btn {
@@ -60,6 +60,6 @@
 
 .form-control:focus {
   box-shadow: none;
-  border-bottom: 3px solid orange;
+  border-bottom: 3px solid var(--future_pink);
   outline: 0;
 }

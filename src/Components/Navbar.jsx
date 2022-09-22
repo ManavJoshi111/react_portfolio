@@ -17,12 +17,12 @@ const Navbar = () => {
     <Router>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <img
+          {/* <img
             className="logoimg"
             src={myImg}
             alt="Logo Is Here"
             height="40px"
-          />
+          /> */}
           <button
             className="navbar-toggler"
             type="button"

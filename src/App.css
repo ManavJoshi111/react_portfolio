@@ -1,5 +1,10 @@
+*{
+  font-family: "Hahmlet", serif;
+}
 body {
   overflow-y: scroll;
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .App {
@@ -39,4 +44,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+::selection{
+  background-color: var(--future_pink) !important;
 }
