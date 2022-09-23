@@ -4,7 +4,6 @@ import img from "../Images/AboutImg.png";
 import Card from "./Card";
 import Footer from "./Footer";
 import Path from "../Assets/Manav_Resume.pdf";
-
 const About = () => {
   return (
     <>

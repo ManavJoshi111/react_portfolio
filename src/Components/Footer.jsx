@@ -1,7 +1,7 @@
 import React from "react";
 
 const spanstyle = {
-  color: "orange",
+  color: "var(--future_pink)",
   fontWeight: "bolder",
 };
 
@@ -18,7 +18,7 @@ const Footer = () => {
             style={footerstyle}
           >
             <div className="text-center">
-              Developed & Designed With 🧡 by{" "}
+              Designed & Developed With 💖 by{" "}
               <span style={spanstyle}>Manav Joshi</span>
             </div>
           </footer>
