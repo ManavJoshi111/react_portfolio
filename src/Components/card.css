@@ -6,7 +6,7 @@
 .card {
   margin: 10px;
   transition: 1s;
-  cursor: default;
+  /* cursor: default; */
   border: 1px solid var(--future_pink);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   background-color: #000000;
@@ -32,6 +32,6 @@
 }
 
 .card-link:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   color: rgb(250, 31, 31) !important;
 }
