@@ -2,11 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import "./contact.css";
 import emailjs from "emailjs-com";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Insta from "../Assets/Instagram.gif";
 
 const Contact = () => {
   function sendEmail(e) {
@@ -49,7 +45,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <GitHubIcon className="icon mx-3" />
+                <i class="fa-brands fa-github icon"></i>
               </a>
               <a
                 href="https://twitter.com/Man___111"
@@ -57,7 +53,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <TwitterIcon className="icon mx-3" />
+                <i class="fa-brands fa-twitter icon"></i>
               </a>
               <a
                 href="https://www.instagram.com/man_joshi_111/"
@@ -65,7 +61,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <InstagramIcon className="icon mx-3" />
+                <i class="fa-brands fa-instagram icon"></i>
               </a>
               <a
                 href="https://m.facebook.com/profile.php?id=100070915911380&refsrc=deprecated&_rdr"
@@ -73,7 +69,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FacebookIcon className="icon mx-3" />
+                <i class="fa-brands fa-facebook icon"></i>
               </a>
               <a
                 href="https://www.linkedin.com/in/manav-joshi-9a284b20b/"
@@ -81,7 +77,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <LinkedInIcon className="icon mx-3" />
+                <i class="fa-brands fa-linkedin icon"></i>
               </a>
             </div>
           </div>

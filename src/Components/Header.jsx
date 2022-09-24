@@ -14,14 +14,13 @@ const Header = () => {
       <div className="header-wrapper">
         <Fade bottom>
           <div className="main-info">
-            <h1>
-              Hello{" "}
-              <img
+            <h1 className="fw-bold">
+              Hello  I'm Manav Joshi
+              {/* <img
                 src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif"
                 alt=""
                 height="50px"
-              />{" "}
-              I'm Manav Joshi
+              />{" "} */}
             </h1>
             <p className="typed-text">
               I'm{" "}

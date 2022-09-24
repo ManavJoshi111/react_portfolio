@@ -4,6 +4,7 @@ import myImg from "../Images/M_Logo.png";
 import About from "./About";
 import Error from "./Error";
 import Contact from "./Contact";
+import Projects from "./Projects";
 import {
   BrowserRouter as Router,
   Route,
@@ -55,6 +56,17 @@ const Navbar = () => {
                     "nav-link active" + (isActive ? " active_class" : "")
                   }
                   aria-current="page"
+                  to="/Projects"
+                >
+                  Projects
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    "nav-link active" + (isActive ? " active_class" : "")
+                  }
+                  aria-current="page"
                   to="/about"
                 >
                   About
@@ -78,6 +90,7 @@ const Navbar = () => {
       <Routes>
         <Route exact path="/" element={<Header />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/Projects" element={<Projects />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

@@ -25,7 +25,8 @@
 }
 
 #hey {
-  color: var(--future_pink);
+  color: var(--future_pink) !important;
+  font-weight: 2000;
 }
 
 .btn {
