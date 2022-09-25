@@ -31,7 +31,7 @@
 
 .icon:hover {
   color: var(--future_pink);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .form-group label {
