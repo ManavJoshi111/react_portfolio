@@ -33,7 +33,7 @@ const About = () => {
             <a
               type="button"
               href={Path}
-              className="btn btn-outline-dark text-light"
+              className="btn btn-main-offer"
               target="_href"
               downlaod="true"
             >

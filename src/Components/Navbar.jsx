@@ -6,6 +6,7 @@ import Error from "./Error";
 import Contact from "./Contact";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import Experience from "./Experience";
 import {
   BrowserRouter as Router,
   Route,
@@ -90,6 +91,17 @@ const Navbar = () => {
                     "nav-link active" + (isActive ? " active_class" : "")
                   }
                   aria-current="page"
+                  to="/experience"
+                >
+                  Experience
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    "nav-link active" + (isActive ? " active_class" : "")
+                  }
+                  aria-current="page"
                   to="/contact"
                 >
                   Contact
@@ -104,10 +116,11 @@ const Navbar = () => {
         <Route path="/about" element={<About />}></Route>
         <Route path="/skills" element={<Skills />}></Route>
         <Route path="/projects" element={<Projects />}></Route>
+        <Route path="/experience" element={<Experience />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
-    </Router>
+    </Router >
   );
 };
 

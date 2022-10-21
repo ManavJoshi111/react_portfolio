@@ -124,7 +124,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary mt-4 submitbtn mb-3"
+                className="btn btn-primary btn-main-offer mt-4"
               >
                 Send Message
               </button>

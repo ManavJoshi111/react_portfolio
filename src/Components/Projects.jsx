@@ -3,7 +3,7 @@ import Card from './Card';
 function Projects() {
     return (
         <>
-            <center><h2 className="titleproj">Projects - Made By Me</h2></center>
+            <center><h2 className="titleproj text-light">Projects - Made By Me</h2></center>
             <div className="container-fluid mt-4">
                 <div className="row">
                     <div className="col-md-6">
