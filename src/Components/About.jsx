@@ -1,7 +1,8 @@
 import React from "react";
 import "./about.css";
 import img from "../Images/AboutImg.png";
-import Card from "./Card";
+import Experience from "./Experience";
+import Projects from "./Projects";
 import Footer from "./Footer";
 import Path from "../Assets/Manav_Resume.pdf";
 const About = () => {
@@ -42,6 +43,9 @@ const About = () => {
           </center>
         </div>
       </div>
+      <br /><br />
+      <Experience />
+      <Projects />
       <Footer />
     </>
   );

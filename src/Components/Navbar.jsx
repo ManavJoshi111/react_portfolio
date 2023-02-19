@@ -1,12 +1,8 @@
 import React from "react";
 import "./navbar.css";
-import myImg from "../Images/M_Logo.png";
 import About from "./About";
 import Error from "./Error";
 import Contact from "./Contact";
-import Projects from "./Projects";
-import Skills from "./Skills";
-import Experience from "./Experience";
 import {
   BrowserRouter as Router,
   Route,
@@ -58,28 +54,6 @@ const Navbar = () => {
                     "nav-link active" + (isActive ? " active_class" : "")
                   }
                   aria-current="page"
-                  to="/skills"
-                >
-                  Skills
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    "nav-link active" + (isActive ? " active_class" : "")
-                  }
-                  aria-current="page"
-                  to="/Projects"
-                >
-                  Projects
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    "nav-link active" + (isActive ? " active_class" : "")
-                  }
-                  aria-current="page"
                   to="/about"
                 >
                   About
@@ -91,20 +65,9 @@ const Navbar = () => {
                     "nav-link active" + (isActive ? " active_class" : "")
                   }
                   aria-current="page"
-                  to="/experience"
-                >
-                  Experience
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    "nav-link active" + (isActive ? " active_class" : "")
-                  }
-                  aria-current="page"
                   to="/contact"
                 >
-                  Contact
+                  Contact Me
                 </NavLink>
               </li>
             </ul>
@@ -114,9 +77,6 @@ const Navbar = () => {
       <Routes>
         <Route exact path="/" element={<Header />}></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route path="/skills" element={<Skills />}></Route>
-        <Route path="/projects" element={<Projects />}></Route>
-        <Route path="/experience" element={<Experience />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

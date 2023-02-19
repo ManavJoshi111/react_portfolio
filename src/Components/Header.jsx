@@ -1,11 +1,6 @@
 import React from "react";
 import Typed from "react-typed";
 import "./header.css";
-import About from "./About";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Contact from "./Contact";
-import Error from "./Error";
 import { Route, Routes, NavLink } from "react-router-dom";
 import Particle from "./Particle";
 const Header = () => {

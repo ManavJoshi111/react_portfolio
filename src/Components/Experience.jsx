@@ -3,9 +3,10 @@ import Card from "./Card";
 const Experience = () => {
     return (
         <>
-            <center><h2 className='titleproj text-light'>Experience</h2></center>
+            <center><h2 className='titleproj text-light'><u>Experience</u></h2></center>
+            <br />
             <Card
-                title="Web Devlopment Intern"
+                title="Web Devlopment Intern @ Thinkbeat Solutions"
                 desc="Worked As Webdevlopment Intern in a startup named Thinkbeat Solutions. Worked on technologies like React and Magento2"
                 tech="HTML CSS JS React Magento2 Servers"
                 className="card"

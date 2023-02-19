@@ -6,21 +6,23 @@
 .card {
   margin: 10px;
   transition: 1s;
-  /* cursor: default; */
+  cursor: default;
   border: 1px solid var(--future_pink);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   background-color: #000000;
   border-radius: 20px;
+  height: 95%;
 }
 
-.card:hover {
+/* .card:hover {
   transform: scale(1.04);
-}
+} */
 
 .card-title {
   color: var(--future_pink);
   /* text-transform: uppercase; */
   font-weight: bolder;
+  height: 20%;
 }
 
 .card-text {
