@@ -1,86 +1,48 @@
 import React from "react";
-import "./navbar.css";
+import { Link as Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Header from "./Header";
 import About from "./About";
 import Error from "./Error";
 import Contact from "./Contact";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  NavLink,
-} from "react-router-dom";
-import Header from "./Header";
 
 const Navbar = () => {
   return (
     <Router>
-      <div className="container-fluid">
-        <nav className="navbar navbar-expand-md mt-1 rounded navbar-dark bg-dark">
-          {/* <img
-            className="logoimg"
-            src={myImg}
-            alt="Logo Is Here"
-            height="40px"
-          /> */}
-          <button
-            className="navbar-toggler"
+      <nav className="navbar navbar-expand-md m-1 rounded navbar-dark bg-dark">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">Manav Joshi</Link>
+          <button className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div
-            className="collapse navbar-collapse "
-            id="navbarSupportedContent"
-          >
-            <ul className="navbar-nav ms-auto me-5">
+          <div className="collapse navbar-collapse" id="navbarColor02">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    "nav-link active" + (isActive ? " active_class" : "")
-                  }
-                  to="/"
-                >
-                  Home
-                </NavLink>
+                <Link className="nav-link" to="/" acticeClassname="active">Home</Link>
               </li>
               <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    "nav-link active" + (isActive ? " active_class" : "")
-                  }
-                  aria-current="page"
-                  to="/about"
-                >
-                  About
-                </NavLink>
+                <Link className="nav-link" to="/about" acticeClassname="active">About</Link>
               </li>
               <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    "nav-link active" + (isActive ? " active_class" : "")
-                  }
-                  aria-current="page"
-                  to="/contact"
-                >
-                  Contact Me
-                </NavLink>
+                <Link className="nav-link" to="/contact" acticeClassname="active">Contact Me</Link>
               </li>
             </ul>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
+
       <Routes>
-        <Route exact path="/" element={<Header />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="*" element={<Error />}></Route>
+        <Route exact path="/" element={<Header />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-    </Router >
+    </Router>
   );
 };
 
