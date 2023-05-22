@@ -1,4 +1,4 @@
-# meManav (Portfolio of Manav H Joshi)
+# meManav (My Portfolio)
 
 > Welcome to my portfolio! This is a collection of my projects and skills in the field of  development.
 
