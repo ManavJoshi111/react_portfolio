@@ -1,10 +1,12 @@
-:root{
-  --future_pink: #ed3659;
+:root {
+  --future_pink: #e73d5c;
   --future_white: #ffffff;
 }
-html{
+
+html {
   min-height: 100vh;
 }
+
 .header-wrapper {
   position: relative;
   /* background: url("../Images/Header_Bg.gif"); */
@@ -42,7 +44,7 @@ html{
   text-transform: uppercase;
 }
 
-.btn{
+.btn {
   color: black;
 }
 

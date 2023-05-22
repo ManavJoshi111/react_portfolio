@@ -7,10 +7,10 @@
   margin-left: 20px;
 }
 
-.bg-dark
+/* .bg-dark
 {
   background-color: #000000 !important;
-}
+} */
 /* nav {
   box-shadow: 0 10px 7px -6px #000000;
 } */
@@ -39,5 +39,5 @@
 }
 
 .active_class {
-  color:var(--future_pink) !important;
+  color: var(--future_pink) !important;
 }

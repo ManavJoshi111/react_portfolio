@@ -14,8 +14,8 @@ import Header from "./Header";
 const Navbar = () => {
   return (
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
+      <div className="container-fluid">
+        <nav className="navbar navbar-expand-md mt-1 rounded navbar-dark bg-dark">
           {/* <img
             className="logoimg"
             src={myImg}
@@ -72,8 +72,8 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
       <Routes>
         <Route exact path="/" element={<Header />}></Route>
         <Route path="/about" element={<About />}></Route>

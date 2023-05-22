@@ -9,7 +9,7 @@
   cursor: default;
   border: 1px solid var(--future_pink);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-  background-color: #000000;
+  /* background-color: #000000; */
   border-radius: 20px;
   height: 95%;
 }
@@ -28,6 +28,7 @@
 .card-text {
   color: var(--future_white);
 }
+
 .card-link {
   color: var(--future_pink) !important;
   font-weight: bold;
