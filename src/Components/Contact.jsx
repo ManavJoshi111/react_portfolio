@@ -2,7 +2,6 @@ import React from "react";
 import Footer from "./Footer";
 import "./contact.css";
 import emailjs from "emailjs-com";
-import Insta from "../Assets/Instagram.gif";
 
 const Contact = () => {
   function sendEmail(e) {
@@ -28,25 +27,25 @@ const Contact = () => {
             <h2 className="hey text-justify display-5 mt-2">Get In Touch</h2>
             <h3 className="heading mt-2">Contact</h3>
             <a href="tel:+919157441707" className="number ml-3">
-              <p>+91 9157441707</p>
+              <b><p>+91 9157441707</p></b>
             </a>
             <br />
             <h3 className="heading">Email</h3>
             <a href="mailto:manavjoshi154@gmail.com" className="number">
-              <p>manavjoshi154@gmail.com</p>
+              <b><p>manavjoshi154@gmail.com</p></b>
             </a>
             <br />
             <h3 className="heading">Location</h3>
-            <p className="number">29,Saraswati Shantinagar Society, Idar</p>
+            <b><p className="number">29,Saraswati Shantinagar Society, Idar</p></b>
             <br />
-            <div className="d-flex justify-content-center align-items-center flex-row flex-md-row align-self-center mb-3">
+            <div className="d-flex justify-content-center align-items-center flex-row align-self-center mb-3">
               <a
                 href="https://github.com/ManavJoshi111"
                 className="iconlink"
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-github icon"></i>
+                <i class="fa-brands fa-github icon icon mx-3"></i>
               </a>
               <a
                 href="https://twitter.com/Man___111"
@@ -54,7 +53,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-twitter icon"></i>
+                <i class="fa-brands fa-twitter icon icon mx-3"></i>
               </a>
               <a
                 href="https://www.instagram.com/man_joshi_111/"
@@ -62,7 +61,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-instagram icon"></i>
+                <i class="fa-brands fa-instagram icon icon mx-3"></i>
               </a>
               <a
                 href="https://m.facebook.com/profile.php?id=100070915911380&refsrc=deprecated&_rdr"
@@ -70,7 +69,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-facebook icon"></i>
+                <i class="fa-brands fa-facebook icon icon mx-3"></i>
               </a>
               <a
                 href="https://www.linkedin.com/in/manav-joshi-9a284b20b/"
@@ -78,7 +77,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-linkedin icon"></i>
+                <i class="fa-brands fa-linkedin icon icon mx-3"></i>
               </a>
             </div>
           </div>
