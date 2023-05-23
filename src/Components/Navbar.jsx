@@ -4,13 +4,14 @@ import Header from "./Header";
 import About from "./About";
 import Error from "./Error";
 import Contact from "./Contact";
+import Logo from "../Images/M_Logo.png";
 
 const Navbar = () => {
   return (
     <Router>
       <nav className="navbar navbar-expand-md m-1 rounded navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">Manav Joshi</Link>
+          <Link className="navbar-brand" to="/"><img src={Logo} height={30} width={30}></img></Link>
           <button className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -42,7 +43,7 @@ const Navbar = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
       </Routes>
-    </Router>
+    </Router >
   );
 };
 

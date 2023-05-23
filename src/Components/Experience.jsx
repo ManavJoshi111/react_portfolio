@@ -6,8 +6,8 @@ const Experience = () => {
             <center><h2 className='titleproj text-light'><u>Experience</u></h2></center>
             <br />
             <Card
-                title="Web Devlopment Intern @ Thinkbeat Solutions"
-                description="Worked As Webdevlopment Intern in a startup named Thinkbeat Solutions. Worked on technologies like React and Magento2"
+                title="Web Development Intern @ Thinkbeat Solutions"
+                description="Worked As Web Development Intern in a startup named Thinkbeat Solutions. Worked on technologies like React and Magento2"
                 technologies="HTML CSS JS React Magento2 Servers"
                 className="card"
             />

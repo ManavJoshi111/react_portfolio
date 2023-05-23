@@ -9,7 +9,7 @@ const projects = [
     live_url: "https://resume-builder-frontend.onrender.com/"
   },
   {
-    title: "CryptoX - Real-time Cryptocurrency Tracker",
+    title: "CryptoX - A Cryptocurrency Tracker",
     description: "CryptoX is a real-time tracker for multiple cryptocurrencies. It enables users to monitor prices, view ticker charts, simulate transactions with dummy funds, and review transaction history for evaluating profit/loss.",
     technologies: [
       "MERN Stack ",
@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: "VendorVoretx",
-    description: "The project is designed to help local vendors grow their small businesses by providing them a platform to showcase their shops and communities and plans 🚀.Customers can easily discover these shops, connect with their local community, explore current discount plans, and even share their experiences on that platform with rating of service of that shop ✨.",
+    description: "The project is designed to help local vendors grow their small businesses by providing them a platform to showcase their shops and communities and plans. Customers can easily discover these shops, connect with their local community, explore current discount plans, and even share their experiences on that platform with rating of service of that shop.",
     technologies: [
       "MERN Stack ",
       "Bootstrap"
@@ -43,6 +43,15 @@ const projects = [
     live_url: ""
   },
   {
+    title: "WeCheck - A Weather App",
+    description: "WeCheck is a User friendly weather app which shows the weather of the specified location. It shows the min/max temperature observed at the location specifed by the user.",
+    technologies: [
+      "ReactJS"
+    ],
+    code_url: "https://github.com/ManavJoshi111/WeatherAppWithReact",
+    live_url: ""
+  },
+  {
     title: "Spotified - A Music Player Web App",
     description: "I made a basic web app that gives the same experience as the music app giants like Spotify, Ganna, etc. Users can navigate through the UI easily and enjoy their preferred music.",
     technologies: [
@@ -53,15 +62,6 @@ const projects = [
     code_url: "https://github.com/ManavJoshi111/Spotified",
     live_url: "https://manavjoshi111.github.io/Spotified/"
   },
-  {
-    title: "WeCheck - A Weather App",
-    description: "WeCheck is a User friendly weather app which shows the weather of the specified location. It shows the min/max temerature observed at the location specifed by the user.",
-    technologies: [
-      "ReactJS"
-    ],
-    code_url: "https://github.com/ManavJoshi111/WeatherAppWithReact",
-    live_url: ""
-  }
 ]
 
 export default projects;
