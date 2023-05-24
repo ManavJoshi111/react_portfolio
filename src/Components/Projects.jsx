@@ -4,7 +4,7 @@ import projects from '../Data/projects';
 function Projects() {
     return (
         <>
-            <center><h2 className="titleproj text-light"><u>Projects - Made By Me</u></h2></center>
+            <center><h2 className="titleproj text-light" id="projects"><u>Projects - Made By Me</u></h2></center>
             <div className="container-fluid mt-4">
                 <div className="row">
                     <div className="row">
