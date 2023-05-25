@@ -21,7 +21,7 @@ const Projects = () => {
                     <u>Projects - Made By Me</u>
                 </h2>
             </center>
-            <div className="container-fluid mt-3">
+            <div className="container-fluid mt-2">
                 <div className="row">
                     <div className="row">
                         {projects.map((val, ind) => {
