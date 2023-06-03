@@ -20,7 +20,7 @@ const projects = [
     live_url: ""
   },
   {
-    title: "VendorVoretx",
+    title: "VendorVortex",
     description: "The project is designed to help local vendors grow their small businesses by providing them a platform to showcase their shops and communities and plans. Customers can easily discover these shops, connect with their local community, explore current discount plans, and even share their experiences on that platform with rating of service of that shop.",
     technologies: [
       "MERN Stack ",
