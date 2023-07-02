@@ -5,6 +5,7 @@ import Experience from "./Experience";
 import Projects from "./Projects";
 import Footer from "./Footer";
 import Path from "../Assets/Manav_Resume.pdf";
+import Achievements from "./Achievements";
 const About = () => {
   return (
     <>
@@ -40,7 +41,11 @@ const About = () => {
       </div>
       <br /><br />
       <Experience />
+      <hr />
       <Projects />
+      <hr />
+      <Achievements />
+      <hr />
       <Footer />
     </>
   );

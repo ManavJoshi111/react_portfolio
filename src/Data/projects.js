@@ -62,6 +62,15 @@ const projects = [
     code_url: "https://github.com/ManavJoshi111/Spotified",
     live_url: "https://manavjoshi111.github.io/Spotified/"
   },
+  {
+    title: "Contest Notifier - A Discord Bot",
+    description: "It is a discord bot I made for GDSC BVM discord server, the bot notifies users about the upcoming contests in next 24 hours",
+    technologies: [
+      "JavaScript ",
+      "Discord JS"
+    ],
+    code_url: "https://github.com/ManavJoshi111/Contest_Notifier_Bot",
+  },
 ]
 
 export default projects;

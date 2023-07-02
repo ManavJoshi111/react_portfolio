@@ -25,8 +25,12 @@ const Projects = () => {
                 <div className="row">
                     <div className="row">
                         {projects.map((val, ind) => {
+                            const isLastElement = ind === projects.length - 1;
+                            const isOddNumber = projects.length % 2 === 1;
+                            const isCentered = isOddNumber && isLastElement;
+
                             return (
-                                <div className="col-md-6" key={ind}>
+                                <div className={`col-md-6 ${isCentered ? 'offset-md-3' : ''}`} key={ind}>
                                     {val.title !== '' && val.title !== undefined && (
                                         <Card
                                             title={val.title}
@@ -42,6 +46,7 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
+
         </>
     );
 };
