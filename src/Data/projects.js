@@ -17,7 +17,7 @@ const projects = [
       "ChartJS ",
     ],
     code_url: "https://github.com/ManavJoshi111/stock_project_frontend",
-    live_url: ""
+    live_url: "https://tinyurl.com/cryptoxTrading"
   },
   {
     title: "VendorVortex",
