@@ -22,6 +22,7 @@
 .iconlink {
   color: white;
 }
+
 .icon {
   color: var(--future_white);
   transform: scale(1.7);
@@ -54,13 +55,18 @@
 
 .form-control {
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--future_white);
   border-radius: 0 !important;
   transition: 0.1s;
 }
 
 .form-control:focus {
   box-shadow: none;
-  border-bottom: 3px solid var(--future_pink);
+  border-bottom: 1px solid var(--future_pink);
   outline: 0;
+}
+
+.btn:hover {
+  background-color: var(--future_white) !important;
+  border: 1px solid var(--future_white) !important;
 }
