@@ -1,16 +1,14 @@
 import React from "react";
 import Typed from "react-typed";
 import "./header.css";
-import { Route, Routes, NavLink } from "react-router-dom";
-import Particle from "./Particle";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <Particle />
       <div className="header-wrapper">
         <div className="main-info">
           <h1 className="fw-bold">
-            Hello  I'm Manav Joshi
+            Hello I'm Manav Joshi
             {/* <img
                 src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif"
                 alt=""

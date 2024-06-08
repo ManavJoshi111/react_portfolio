@@ -1,7 +1,5 @@
 import React from "react";
-import "./App.css";
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
+import "./app.css";
 import Navbar from "./Components/Navbar";
 
 const App = () => {
