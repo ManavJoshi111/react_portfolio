@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+:root {
+  --future_pink: #05cde3;
+  --future_white: #ffffff;
+}
+
 * {
   font-family: "Hahmlet", serif;
 }

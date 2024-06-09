@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes, NavLink } from "react-router-dom";
-import Home from "./Header";
 import "./error.css";
 import Error_Pic from "../Images/404_Page.png";
 const Error = () => {
@@ -24,9 +23,6 @@ const Error = () => {
           </center>
         </div>
       </div>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-      </Routes>
     </>
   );
 };

@@ -17,7 +17,10 @@ const Contact = () => {
         alert("Your message has been sent successfully...!");
         e.target.reset();
       })
-      .catch((err) => { console.log(err); e.target.reset(); });
+      .catch((err) => {
+        console.log(err);
+        e.target.reset();
+      });
   }
   return (
     <>
@@ -27,16 +30,22 @@ const Contact = () => {
             <h2 className="hey text-justify display-5 mt-2">Get In Touch</h2>
             <h3 className="heading mt-2">Contact</h3>
             <a href="tel:+919157441707" className="number ml-3">
-              <b><p>+91 9157441707</p></b>
+              <b>
+                <p>+91 9157441707</p>
+              </b>
             </a>
             <br />
             <h3 className="heading">Email</h3>
             <a href="mailto:manavjoshi154@gmail.com" className="number">
-              <b><p>manavjoshi154@gmail.com</p></b>
+              <b>
+                <p>manavjoshi154@gmail.com</p>
+              </b>
             </a>
             <br />
             <h3 className="heading">Location</h3>
-            <b><p className="number">29,Saraswati Shantinagar Society, Idar</p></b>
+            <b>
+              <p className="number">29,Saraswati Shantinagar Society, Idar</p>
+            </b>
             <br />
             <div className="d-flex justify-content-center align-items-center flex-row align-self-center mb-3">
               <a
@@ -124,7 +133,8 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary btn-main-offer mt-4"
+                className="btn  btn-main-offer mt-4"
+                style={{ color: "var(--future-pink)" }}
               >
                 Send Message
               </button>
