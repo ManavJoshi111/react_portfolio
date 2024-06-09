@@ -1,9 +1,10 @@
 import React from "react";
 import Card from "./Card";
+
 const Experience = () => {
   return (
     <>
-      <center>
+      <center id="experience">
         <h2 className="text-light">
           <u className="titleproj">Experience</u>
         </h2>

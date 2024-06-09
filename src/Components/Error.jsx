@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Routes, NavLink } from "react-router-dom";
-import Home from "./Header";
 import "./error.css";
+import Header from "./Header";
 import Error_Pic from "../Images/404_Page.png";
+
 const Error = () => {
   return (
     <>
@@ -25,7 +26,7 @@ const Error = () => {
         </div>
       </div>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Header />}></Route>
       </Routes>
     </>
   );

@@ -10,7 +10,6 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   /* background-color: #000000; */
   border-radius: 20px;
-  height: 95%;
 }
 
 /* .card:hover {
@@ -18,17 +17,17 @@
 } */
 
 .card-title {
-  color: var(--future_pink);
+  color: var(--primary);
   /* text-transform: uppercase; */
   font-weight: bolder;
 }
 
 .card-text {
-  color: var(--future_white);
+  color: #000
 }
 
 .card-link {
-  color: var(--future_pink) !important;
+  color: var(--primary) !important;
   font-weight: bold;
 }
 

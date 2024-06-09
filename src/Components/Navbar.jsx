@@ -1,49 +1,50 @@
-import React from "react";
-import { Link as Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Header from "./Header";
-import About from "./About";
-import Error from "./Error";
-import Contact from "./Contact";
-import Logo from "../Images/M_Logo.png";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  return (
-    <Router>
-      <nav className="navbar navbar-expand-md m-1 rounded navbar-dark bg-dark">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/"><img src={Logo} height={30} width={30}></img></Link>
-          <button className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarColor02"
-            aria-controls="navbarColor02"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarColor02">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link" to="/" acticeClassname="active">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/about" acticeClassname="active">About</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/contact" acticeClassname="active">Contact Me</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  const [activeSection, setActivesection] = useState("#");
+  const NavbarLinks = [
+    {
+      title: "Home",
+      path: "#",
+    },
+    {
+      title: "Experience",
+      path: "#experience",
+    },
+    {
+      title: "Projects",
+      path: "#projects",
+    },
+    {
+      title: "Contact",
+      path: "#contact",
+    },
+  ];
 
-      <Routes>
-        <Route exact path="/" element={<Header />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </Router >
+  const getActiveClass = (clickedHash) => setActivesection(clickedHash);
+
+  return (
+    <nav className="d-flex custom-navbar justify-content-center m-0 p-0 fixed-top p-2 border-bottom">
+      <ul className="list-unstyled d-inline-flex inline-flex justify-content-center align-items-center m-0 p-0">
+        {NavbarLinks.map((link, index) => (
+          <li key={index} className="p-1 cursor-pointer">
+            <a
+              href={link.path}
+              className={`text-decoration-none text-white ${
+                activeSection === link.path ? "active" : ""
+              }`}
+              onClick={() => {
+                getActiveClass(link.path);
+              }}
+            >
+              {link.title}
+            </a>
+          </li>
+        ))}
+        <li className="p-1 cursor-pointer"></li>
+      </ul>
+    </nav>
   );
 };
 

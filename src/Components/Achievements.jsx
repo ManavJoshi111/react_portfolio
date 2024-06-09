@@ -7,10 +7,10 @@ const Achievements = () => {
       <h2 className="mb-3 text-light text-center" id="projects">
         <u className="titleproj">Achievements</u>
       </h2>
-      <ul className="list-group">
+      <ul className="list-group rounded-2">
         {achievements.map((achievement, index) => (
           <li
-            className="mb-0 pb-0 list-group-item d-flex align-items-start"
+            className="mb-0 pb-0 list-group-item d-flex align-items-start rounded-2 mt-2"
             key={index}
           >
             <span className="bullet-point me-2 text-lg">🎯</span>

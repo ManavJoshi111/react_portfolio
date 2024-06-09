@@ -30,10 +30,7 @@ const Projects = () => {
               const isCentered = isOddNumber && isLastElement;
 
               return (
-                <div
-                  className={`col-md-6 ${isCentered ? "offset-md-3" : ""}`}
-                  key={ind}
-                >
+                <>
                   {val.title !== "" && val.title !== undefined && (
                     <Card
                       title={val.title}
@@ -43,7 +40,7 @@ const Projects = () => {
                       live_url={val.live_url}
                     />
                   )}
-                </div>
+                </>
               );
             })}
           </div>

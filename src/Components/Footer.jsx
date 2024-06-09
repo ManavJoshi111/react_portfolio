@@ -1,7 +1,7 @@
 import React from "react";
 
 const spanstyle = {
-  color: "var(--future_pink)",
+  color: "var(--primary)",
   fontWeight: "bolder",
 };
 
