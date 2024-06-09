@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,4 +17,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
