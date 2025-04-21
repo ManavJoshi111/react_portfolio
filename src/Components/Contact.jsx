@@ -28,12 +28,6 @@ const Contact = () => {
         <div className="container-fluid mt-3 flex-wrap d-flex flex-column-reverse flex-md-row">
           <div className="leftcontainer container-fluid d-flex flex-column justify-content-start align-items-start ">
             <h2 className="hey text-justify display-5 mt-2">Get In Touch</h2>
-            <h3 className="heading mt-2">Contact</h3>
-            <a href="tel:+919157441707" className="number ml-3">
-              <b>
-                <p>+91 9157441707</p>
-              </b>
-            </a>
             <br />
             <h3 className="heading">Email</h3>
             <a href="mailto:manavjoshi154@gmail.com" className="number">
