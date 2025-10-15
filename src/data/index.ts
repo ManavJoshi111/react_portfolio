@@ -10,15 +10,15 @@ const projects: IProject[] = [
   {
     title: "Curio - Spark Your Curiosity!",
     description:
-      "Curio is a community driven QnA platform where users can ask questions, answer questions, upvote and downvote questions and answers.It has feature of content moderation as well. It is a full-stack web application built using MERN stack.",
+      "A full-stack community-driven Q&A platform built with the MERN stack and Redux. Enables users to ask, answer, upvote/downvote, and moderate content with role-based access control (JWT). Graded 10/10 as final-year project.",
     githubLink: "https://github.com/manavjoshi111/curio",
     liveLink: "https://app-curio.vercel.app/",
-    technologies: ["MERN Stack", "Redux", "React-BootStrap"],
+    technologies: ["MERN Stack", "Redux", "React-Bootstrap"],
   },
   {
-    title: "CryptoX - A Cryptocurrency Tracker",
+    title: "CryptoX - Cryptocurrency Trading Simulator",
     description:
-      "CryptoX is a real-time tracker for multiple cryptocurrencies. It enables users to monitor prices, view ticker charts, simulate transactions with dummy funds, and review transaction history for evaluating profit/loss.",
+      "Developed a real-time crypto trading simulator with live Binance API data using WebSockets. Users can simulate buy/sell transactions, visualize performance through dynamic Chart.js graphs, and track portfolio profit/loss.",
     githubLink: "https://github.com/ManavJoshi111/stock_project_frontend",
     liveLink: "https://app-cryptox.netlify.app/",
     technologies: ["MERN Stack", "Bootstrap", "ChartJS"],
@@ -26,23 +26,23 @@ const projects: IProject[] = [
   {
     title: "myCV - Professional Resume Builder",
     description:
-      "myCV is a professional resume builder web app which helps the user making their resume. User need to create an account and fill the form to make their resume. The resume can be downloaded as a pdf file.",
+      "Built a resume-building platform allowing users to create profiles, fill structured forms, and download auto-generated resumes as PDFs. Focused on clean UX and form data validation using React and Node.js.",
     githubLink: "https://github.com/manavjoshi111/resume_builder_frontend",
     technologies: ["MERN Stack"],
   },
   {
     title: "VendorVortex - Connecting Communities",
     description:
-      "The project is designed to help local vendors grow their small businesses by providing them a platform to showcase their shops and communities and plans. Customers can easily discover these shops, connect with their local community, explore current discount plans, and even share their experiences on that platform with rating of service of that shop.",
+      "A hackathon-winning MERN project providing local vendors a platform to showcase shops, offers, and reviews. Enhanced community engagement through vendor-customer interactions and real-time rating updates.",
     githubLink: "https://github.com/ManavJoshi111/VendorVortex",
     technologies: ["MERN Stack", "Bootstrap"],
   },
   {
-    title: "Contest Notifier - A Discord Bot",
+    title: "Contest Notifier - Discord Bot",
     description:
-      "It is a discord bot I made for GDSC BVM discord server, the bot notifies users about the upcoming contests in next 24 hours",
+      "A Discord bot built with Node.js and Discord.js to notify users about upcoming programming contests within 24 hours. Actively used in GDSC BVM server to keep 500+ members updated on competitive events.",
     githubLink: "https://github.com/ManavJoshi111/Contest_Notifier_Bot",
-    technologies: ["JavaScript", "Discord JS"],
+    technologies: ["JavaScript", "Discord.js"],
   },
 ];
 
@@ -69,14 +69,15 @@ const experience: IExperience[] = [
         startTime: "Oct 2024",
         endTime: "Present",
         description: [
-          "Worked on a feature which lets user browse through their recently opened entities that helped in user experience",
-          "Solved performance related issues(infinite rendering) which increased the site performance by 40%",
+          "Designed and implemented end-to-end delete functionality for 5+ proprietary entities with mark-as-obsolete and permanent deletion flow.",
+          "Built 'Recently Accessed Entities' feature using Redis, improving user navigation and retention.",
+          "Resolved infinite rendering and high CPU usage issues, boosting frontend performance by 40%.",
         ],
       },
     ],
   },
   {
-    company: "SocialPilot Solutions LLP",
+    company: "SocialPilot Solutions LLP (Acquired by Group.One)",
     companyLink: "https://www.socialpilot.co/",
     roles: [
       {
@@ -84,8 +85,8 @@ const experience: IExperience[] = [
         startTime: "July 2024",
         endTime: "Oct 2024",
         description: [
-          "Developed of a feature that reduced spam accounts by 40% across the platform and by 90% on the targeted social media account",
-          "Implemented a feature that lets the user upload custom thumbnail from video frames or various sources (device, drive, dropbox) etc.",
+          "Developed an anti-spam system blocking high-risk signups, reducing fraudulent trials by 40% platform-wide.",
+          "Implemented video thumbnail slider using React, AWS S3, and Lambda — adopted by 80%+ active users.",
         ],
       },
       {
@@ -93,9 +94,8 @@ const experience: IExperience[] = [
         startTime: "Jan 2024",
         endTime: "July 2024",
         description: [
-          "Worked on both frontend and backend",
-          "Improved UI for auth module pages as per the requirements",
-          "Migrated queries to new database which resulted in ~60% performance improvement",
+          "Delivered 2+ new features and resolved 20+ critical production issues across frontend and backend modules.",
+          "Migrated internal analytics tool to a multi-DB setup, improving query response times by ~60%.",
         ],
       },
     ],
@@ -108,9 +108,9 @@ const experience: IExperience[] = [
         startTime: "Jan 2023",
         endTime: "Mar 2023",
         description: [
-          "Led the team in developing the project 'digiScholar', a scholarship portal using MERN Stack",
-          "Designed schema for the project and developed APIs for seamless CRUD operations",
-          "Successfully integrated frontend and backend components of the project",
+          "Led the development of 'DigiScholar' — a MERN-based scholarship portal for students and admins.",
+          "Designed database schema and implemented RESTful APIs for seamless CRUD operations.",
+          "Collaborated with a 4-member team to integrate frontend and backend modules effectively.",
         ],
       },
     ],
@@ -124,8 +124,8 @@ const experience: IExperience[] = [
         startTime: "Jul 2022",
         endTime: "Sep 2022",
         description: [
-          "Worked as Web Development Intern in a startup named Thinkbeat Solutions",
-          "Worked on technologies like React and Magento2",
+          "Developed web components using React for client-facing projects and internal dashboards.",
+          "Gained exposure to Magento2 and contributed to frontend enhancements for e-commerce clients.",
         ],
       },
     ],
@@ -139,17 +139,17 @@ interface ITechCategory {
 
 const techStack: ITechCategory[] = [
   {
-    title: "Frontend",
+    title: "Frontend Development",
     technologies: [
+      "React.js",
+      "Next.js (App Router)",
+      "Redux",
+      "TypeScript",
+      "JavaScript (ES6+)",
       "HTML5",
       "CSS3",
-      "JavaScript (ES6+)",
-      "React.js",
-      "Redux",
       "Tailwind CSS",
       "Bootstrap",
-      "Next.js (App Router)",
-      "TypeScript",
     ],
   },
   {
@@ -157,16 +157,17 @@ const techStack: ITechCategory[] = [
     technologies: [
       "Node.js",
       "Express.js",
-      "Koajs",
+      "Koa.js",
       "WebSockets",
+      "MongoDB",
       "SQL",
       "PostgreSQL",
-      "MongoDB",
+      "Redis",
     ],
   },
   {
     title: "DevOps & Tools",
-    technologies: ["Docker", "Git", "GitHub", "Linux"],
+    technologies: ["Docker", "Git", "GitHub", "Linux", "AWS (S3, Lambda)"],
   },
 ];
 
