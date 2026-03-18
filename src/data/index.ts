@@ -69,9 +69,10 @@ const experience: IExperience[] = [
         startTime: "Oct 2024",
         endTime: "Present",
         description: [
-          "Designed and implemented end-to-end delete functionality for 5+ proprietary entities with mark-as-obsolete and permanent deletion flow.",
-          "Built 'Recently Accessed Entities' feature using Redis, improving user navigation and retention.",
-          "Resolved infinite rendering and high CPU usage issues, boosting frontend performance by 40%.",
+          "Designed and implemented a safe deletion and restore workflow for a hierarchical configuration system (1000+ JSON configs), ensuring consistency across NFS and Redis caching, enforcing parent–child dependency constraints, and introducing a soft-delete lifecycle to prevent data loss in production environments.",
+          "Built a Redis-based per-user recent objects system for efficient tracking and retrieval of recently accessed entities, supporting bulk and selective deletion.",
+          "Stabilized CI/CD pipelines by resolving critical deployment failures and remediating 15+ high/critical security vulnerabilities, improving overall system reliability and release stability.",
+          "Automated dependency upgrade workflows across 10+ monorepos (~100 package.json files) by developing a Node.js CLI tool to propagate version updates, regenerate lockfiles, and manage Git branching and PR creation, reducing manual effort and improving consistency in security patch releases."
         ],
       },
     ],
