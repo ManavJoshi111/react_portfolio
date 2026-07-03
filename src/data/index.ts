@@ -44,6 +44,20 @@ const projects: IProject[] = [
     githubLink: "https://github.com/ManavJoshi111/Contest_Notifier_Bot",
     technologies: ["JavaScript", "Discord.js"],
   },
+  {
+    title: "ThreatFlow - Automated CVE Remediation Pipeline",
+    description:
+      "Architected an end-to-end CVE remediation pipeline integrating Jenkins, AquaSec container scanning, and Claude AI. Built a Node.js API layer that classifies vulnerabilities by severity and semver impact, invokes LLM-powered analysis for high/critical CVEs with breaking change detection, and auto-creates PRs for patch and minor upgrades. Built a React and Tailwind dashboard backed by PostgreSQL to track scan history, CVE discovery, and remediation actions. In a single POC run, detected 80 CVEs, auto-created 1 PR, identified an internal library as a vulnerability source, and dispatched 40+ AI-generated remediation reports. Placed 2nd among 25+ teams in an internal company-wide hackathon.",
+    githubLink: "",
+    technologies: ["Node.js", "React", "PostgreSQL", "Tailwind"],
+  },
+  {
+    title: "Form 16 Distribution System",
+    description:
+      "Architected a Form 16 finder for an accounting firm managing 4,000+ users, splitting a 5,000-page bulk PDF into individual documents stored on Firebase Storage and served via Cloud Functions. Built a React frontend for PAN-based retrieval scoped to internal staff only, protecting sensitive income data.",
+    githubLink: "",
+    technologies: ["React", "Firebase"],
+  },
 ];
 
 interface IRole {
@@ -69,10 +83,9 @@ const experience: IExperience[] = [
         startTime: "Oct 2024",
         endTime: "Present",
         description: [
-          "Designed and implemented a safe deletion and restore workflow for a hierarchical configuration system (1000+ JSON configs), ensuring consistency across NFS and Redis caching, enforcing parent–child dependency constraints, and introducing a soft-delete lifecycle to prevent data loss in production environments.",
-          "Built a Redis-based per-user recent objects system for efficient tracking and retrieval of recently accessed entities, supporting bulk and selective deletion.",
-          "Stabilized CI/CD pipelines by resolving critical deployment failures and remediating 15+ high/critical security vulnerabilities, improving overall system reliability and release stability.",
-          "Automated dependency upgrade workflows across 10+ monorepos (~100 package.json files) by developing a Node.js CLI tool to propagate version updates, regenerate lockfiles, and manage Git branching and PR creation, reducing manual effort and improving consistency in security patch releases."
+          "Engineered an end-to-end soft-delete, restore, and permanent delete lifecycle for a hierarchical configuration system of 1000+ JSON entities, enforcing parent-child dependency constraints and maintaining consistency across NFS storage and Redis cache.",
+          "Resolved a months-long pre-release defect causing 10,000+ i18n labels across 5+ languages to render as raw keys; diagnosed a silent cache failure and implemented a fail-fast cache invalidation strategy, preventing the issue from reaching customers.",
+          "Built a configurable Node.js CLI tool to automate CVE remediation workflows across 18+ repositories, handling dependency upgrades, lockfile regeneration, Git branching, and PR creation; reduced per-cycle effort from 1 to 2 dev-days down to a 3 to 4 hour unattended run, executed 2+ times per week across the team.",
         ],
       },
     ],
@@ -86,8 +99,8 @@ const experience: IExperience[] = [
         startTime: "July 2024",
         endTime: "Oct 2024",
         description: [
-          "Developed an anti-spam system blocking high-risk signups, reducing fraudulent trials by 40% platform-wide.",
-          "Implemented video thumbnail slider using React, AWS S3, and Lambda — adopted by 80%+ active users.",
+          "Implemented a video thumbnail selection and processing pipeline using React (HTML Canvas for frame extraction) and AWS S3-triggered Lambda functions to generate platform-specific thumbnails, achieving 80%+ adoption across 12k+ customers and 25k+ connected social media accounts.",
+          "Designed a geo-based anti-spam system in Koa authentication middleware using IP geolocation, blocking 5+ high-risk regions responsible for 90%+ of fraudulent free-trial sign-ups.",
         ],
       },
       {
@@ -95,8 +108,7 @@ const experience: IExperience[] = [
         startTime: "Jan 2024",
         endTime: "July 2024",
         description: [
-          "Delivered 2+ new features and resolved 20+ critical production issues across frontend and backend modules.",
-          "Migrated internal analytics tool to a multi-DB setup, improving query response times by ~60%.",
+          "Contributed to migrating a monolithic database into a multi-database architecture separating platform-level and product-specific data, optimizing 5+ critical API queries and improving response times by 60%.",
         ],
       },
     ],
@@ -109,7 +121,7 @@ const experience: IExperience[] = [
         startTime: "Jan 2023",
         endTime: "Mar 2023",
         description: [
-          "Led the development of 'DigiScholar' — a MERN-based scholarship portal for students and admins.",
+          "Led the development of 'DigiScholar', a MERN-based scholarship portal for students and admins.",
           "Designed database schema and implemented RESTful APIs for seamless CRUD operations.",
           "Collaborated with a 4-member team to integrate frontend and backend modules effectively.",
         ],
