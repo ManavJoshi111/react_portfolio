@@ -47,7 +47,7 @@ const projects: IProject[] = [
   {
     title: "ThreatFlow - Automated CVE Remediation Pipeline",
     description:
-      "Architected an end-to-end CVE remediation pipeline integrating Jenkins, AquaSec container scanning, and Claude AI. Built a Node.js API layer that classifies vulnerabilities by severity and semver impact, invokes LLM-powered analysis for high/critical CVEs with breaking change detection, and auto-creates PRs for patch and minor upgrades. Built a React and Tailwind dashboard backed by PostgreSQL to track scan history, CVE discovery, and remediation actions. In a single POC run, detected 80 CVEs, auto-created 1 PR, identified an internal library as a vulnerability source, and dispatched 40+ AI-generated remediation reports. Placed 2nd among 25+ teams in an internal company-wide hackathon.",
+      "Architected an end-to-end CVE remediation pipeline integrating Jenkins, AquaSec container scanning, and Claude AI. Built a Node.js API layer that classifies vulnerabilities by severity and semver impact, invokes LLM-powered analysis for high/critical CVEs with breaking change detection, and auto-creates PRs for patch and minor upgrades. Built a React and Tailwind dashboard backed by PostgreSQL to track scan history, CVE discovery, and remediation actions. In a single POC run, detected 80 CVEs, auto-created 1 PR, identified an internal library as a vulnerability source, and dispatched 40+ AI-generated remediation reports.",
     githubLink: "",
     technologies: ["Node.js", "React", "PostgreSQL", "Tailwind"],
   },
