@@ -6,6 +6,7 @@ import ProjectSection from "./sections/ProjectSection";
 import ExperienceSection from "./sections/ExperienceSection";
 import ContactSection from "./sections/ContactSection";
 import TechnologySection from "./sections/TechnologySection";
+import EducationSection from "./sections/EducationSection";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <ExperienceSection />
         <ProjectSection />
         <TechnologySection />
+        <EducationSection />
         <ContactSection />
       </div>
     </ThemeProvider>
