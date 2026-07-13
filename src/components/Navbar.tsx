@@ -6,23 +6,48 @@ import {
 import ModeToggle from "./ui/ModeToggle";
 import { useEffect, useState } from "react";
 
+const navItems = [
+  { id: "#", sectionId: "home", title: "Home" },
+  { id: "#experience", sectionId: "experience", title: "Experience" },
+  { id: "#projects", sectionId: "projects", title: "Projects" },
+  { id: "#tech", sectionId: "tech", title: "Tech" },
+  { id: "#education", sectionId: "education", title: "Education" },
+  { id: "#contact", sectionId: "contact", title: "Contact" },
+];
+
 const Navbar = () => {
   const [active, setActive] = useState<string>("#");
 
   useEffect(() => {
-    window.addEventListener("hashchange", () => {
-      setActive(window.location.hash);
-    });
-  }, []);
+    const handleScroll = () => {
+      // Near the bottom of the page: always highlight the last section.
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2
+      ) {
+        setActive(navItems[navItems.length - 1].id);
+        return;
+      }
 
-  const navItems = [
-    { id: "#", title: "Home" },
-    { id: "#experience", title: "Experience" },
-    { id: "#projects", title: "Projects" },
-    { id: "#tech", title: "Tech" },
-    { id: "#education", title: "Education" },
-    { id: "#contact", title: "Contact" },
-  ];
+      // Otherwise, highlight the last section whose top has crossed
+      // roughly a third down the viewport.
+      const marker = window.scrollY + window.innerHeight * 0.35;
+      let current = navItems[0].id;
+
+      for (const { id, sectionId } of navItems) {
+        const el = document.getElementById(sectionId);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (top <= marker) current = id;
+      }
+
+      setActive(current);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const renderNavigationItems = () =>
     navItems.map(({ id, title }) => (

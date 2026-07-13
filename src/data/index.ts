@@ -145,6 +145,29 @@ const experience: IExperience[] = [
   },
 ];
 
+interface IEducation {
+  institution: string;
+  institutionLink?: string;
+  location: string;
+  degree: string;
+  score: string;
+  startYear: string;
+  endYear: string;
+  coursework?: string[];
+}
+
+const education: IEducation[] = [
+  {
+    institution: "Birla Vishvakarma Mahavidyalaya Engineering College",
+    location: "Anand, Gujarat",
+    degree: "B.Tech - Computer Engineering",
+    score: "CPI: 8.77",
+    startYear: "2020",
+    endYear: "2024",
+    coursework: ["DSA", "OS", "CN", "OOPs"],
+  },
+];
+
 interface ITechCategory {
   title: string;
   technologies: string[];
@@ -187,8 +210,10 @@ const techStack: ITechCategory[] = [
 export {
   projects,
   experience,
+  education,
   techStack,
   IProject,
   IExperience,
+  IEducation,
   ITechCategory,
 };
