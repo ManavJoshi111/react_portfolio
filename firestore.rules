@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Visit records are written only by the Cloud Function via the Admin SDK,
+    // which bypasses these rules. Block ALL direct browser/client access so the
+    // collected data can never be read or tampered with from the frontend.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
