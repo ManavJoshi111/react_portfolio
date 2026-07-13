@@ -11,6 +11,18 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
+
+# Env (keep .env.example tracked)
+.env
+.env.*
+!.env.example
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+.runtimeconfig.json
 
 # Editor directories and files
 .vscode/*
