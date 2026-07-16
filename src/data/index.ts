@@ -1,6 +1,6 @@
 interface IProject {
   title: string;
-  description: string;
+  description: string[];
   githubLink: string;
   liveLink?: string;
   technologies: string[];
@@ -8,55 +8,74 @@ interface IProject {
 
 const projects: IProject[] = [
   {
+    title: "ThreatFlow - Automated CVE Remediation Pipeline",
+    description: [
+      "End-to-end CVE remediation pipeline integrating Jenkins, AquaSec container scanning, and Claude AI.",
+      "Node.js API classifies vulnerabilities by severity and semver impact, runs LLM analysis with breaking-change detection, and auto-creates PRs for patch and minor upgrades.",
+      "React + Tailwind dashboard on PostgreSQL tracking scan history, CVE discovery, and remediation actions.",
+      "A single POC run detected 80 CVEs, flagged an internal library as a vulnerability source, and dispatched 40+ AI-generated remediation reports.",
+    ],
+    githubLink: "",
+    technologies: ["Node.js", "React", "PostgreSQL", "Tailwind"],
+  },
+  {
+    title: "Form 16 Distribution System",
+    description: [
+      "Form 16 finder for an accounting firm managing 4,000+ users.",
+      "Splits a 5,000-page bulk PDF into individual documents stored on Firebase Storage, served via Cloud Functions.",
+      "React frontend for PAN-based retrieval, scoped to internal staff only to protect sensitive income data.",
+    ],
+    githubLink: "",
+    technologies: ["React", "Firebase"],
+  },
+  {
     title: "Curio - Spark Your Curiosity!",
-    description:
-      "A full-stack community-driven Q&A platform built with the MERN stack and Redux. Enables users to ask, answer, upvote/downvote, and moderate content with role-based access control (JWT). Graded 10/10 as final-year project.",
+    description: [
+      "Full-stack community-driven Q&A platform built with the MERN stack and Redux.",
+      "Users can ask, answer, upvote/downvote, and moderate content, with JWT role-based access control.",
+      "Graded 10/10 as final-year project.",
+    ],
     githubLink: "https://github.com/manavjoshi111/curio",
     liveLink: "https://app-curio.vercel.app/",
     technologies: ["MERN Stack", "Redux", "React-Bootstrap"],
   },
   {
     title: "CryptoX - Cryptocurrency Trading Simulator",
-    description:
-      "Developed a real-time crypto trading simulator with live Binance API data using WebSockets. Users can simulate buy/sell transactions, visualize performance through dynamic Chart.js graphs, and track portfolio profit/loss.",
+    description: [
+      "Real-time crypto trading simulator driven by live Binance API data over WebSockets.",
+      "Simulates buy/sell transactions and visualises performance with dynamic Chart.js graphs.",
+      "Tracks portfolio profit/loss.",
+    ],
     githubLink: "https://github.com/ManavJoshi111/stock_project_frontend",
     liveLink: "https://app-cryptox.netlify.app/",
     technologies: ["MERN Stack", "Bootstrap", "ChartJS"],
   },
   {
     title: "myCV - Professional Resume Builder",
-    description:
-      "Built a resume-building platform allowing users to create profiles, fill structured forms, and download auto-generated resumes as PDFs. Focused on clean UX and form data validation using React and Node.js.",
+    description: [
+      "Resume-building platform where users create profiles, fill structured forms, and download auto-generated resumes as PDFs.",
+      "Focused on clean UX and form data validation using React and Node.js.",
+    ],
     githubLink: "https://github.com/manavjoshi111/resume_builder_frontend",
     technologies: ["MERN Stack"],
   },
   {
     title: "VendorVortex - Connecting Communities",
-    description:
-      "A hackathon-winning MERN project providing local vendors a platform to showcase shops, offers, and reviews. Enhanced community engagement through vendor-customer interactions and real-time rating updates.",
+    description: [
+      "Hackathon-winning MERN platform giving local vendors a place to showcase shops, offers, and reviews.",
+      "Boosted community engagement through vendor-customer interactions and real-time rating updates.",
+    ],
     githubLink: "https://github.com/ManavJoshi111/VendorVortex",
     technologies: ["MERN Stack", "Bootstrap"],
   },
   {
     title: "Contest Notifier - Discord Bot",
-    description:
-      "A Discord bot built with Node.js and Discord.js to notify users about upcoming programming contests within 24 hours. Actively used in GDSC BVM server to keep 500+ members updated on competitive events.",
+    description: [
+      "Discord bot built with Node.js and Discord.js that notifies users of programming contests starting within 24 hours.",
+      "Actively used in the GDSC BVM server to keep 500+ members updated on competitive events.",
+    ],
     githubLink: "https://github.com/ManavJoshi111/Contest_Notifier_Bot",
     technologies: ["JavaScript", "Discord.js"],
-  },
-  {
-    title: "ThreatFlow - Automated CVE Remediation Pipeline",
-    description:
-      "Architected an end-to-end CVE remediation pipeline integrating Jenkins, AquaSec container scanning, and Claude AI. Built a Node.js API layer that classifies vulnerabilities by severity and semver impact, invokes LLM-powered analysis for high/critical CVEs with breaking change detection, and auto-creates PRs for patch and minor upgrades. Built a React and Tailwind dashboard backed by PostgreSQL to track scan history, CVE discovery, and remediation actions. In a single POC run, detected 80 CVEs, auto-created 1 PR, identified an internal library as a vulnerability source, and dispatched 40+ AI-generated remediation reports.",
-    githubLink: "",
-    technologies: ["Node.js", "React", "PostgreSQL", "Tailwind"],
-  },
-  {
-    title: "Form 16 Distribution System",
-    description:
-      "Architected a Form 16 finder for an accounting firm managing 4,000+ users, splitting a 5,000-page bulk PDF into individual documents stored on Firebase Storage and served via Cloud Functions. Built a React frontend for PAN-based retrieval scoped to internal staff only, protecting sensitive income data.",
-    githubLink: "",
-    technologies: ["React", "Firebase"],
   },
 ];
 
@@ -207,13 +226,25 @@ const techStack: ITechCategory[] = [
   },
 ];
 
+interface IResume {
+  path: string;
+  downloadFilename: string;
+}
+
+const resume: IResume = {
+  path: "/Manav_Joshi_Resume.pdf",
+  downloadFilename: "Manav_Joshi_Resume.pdf",
+};
+
 export {
   projects,
   experience,
   education,
   techStack,
+  resume,
   IProject,
   IExperience,
   IEducation,
   ITechCategory,
+  IResume,
 };
