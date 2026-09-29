@@ -61,6 +61,34 @@ function parseBody(req) {
   return data && typeof data === "object" ? data : {};
 }
 
+function sanitizeDeviceLocation(loc) {
+  if (!loc || typeof loc !== "object") return null;
+  const status = typeof loc.status === "string" ? loc.status : "unknown";
+
+  if (
+    status === "granted" &&
+    typeof loc.latitude === "number" &&
+    !isNaN(loc.latitude) &&
+    typeof loc.longitude === "number" &&
+    !isNaN(loc.longitude)
+  ) {
+    return {
+      status: "granted",
+      latitude: loc.latitude,
+      longitude: loc.longitude,
+      accuracy: typeof loc.accuracy === "number" ? loc.accuracy : null,
+      altitude: typeof loc.altitude === "number" ? loc.altitude : null,
+      altitudeAccuracy:
+        typeof loc.altitudeAccuracy === "number" ? loc.altitudeAccuracy : null,
+      heading: typeof loc.heading === "number" ? loc.heading : null,
+      speed: typeof loc.speed === "number" ? loc.speed : null,
+      timestamp: typeof loc.timestamp === "number" ? loc.timestamp : Date.now(),
+    };
+  }
+
+  return { status };
+}
+
 // maxInstances caps how far this can scale, which is the real cost guardrail:
 // even under a traffic spike or abuse, billing can't run away.
 exports.trackVisit = onRequest(
@@ -85,6 +113,7 @@ exports.trackVisit = onRequest(
     const client = parseBody(req);
     const ip = clientIp(req);
     const geo = await lookupGeo(ip);
+    const deviceLocation = sanitizeDeviceLocation(client.location);
 
     const record = {
       receivedAt: FieldValue.serverTimestamp(),
@@ -93,6 +122,10 @@ exports.trackVisit = onRequest(
       client,
       serverUserAgent: req.headers["user-agent"] || null,
     };
+
+    if (deviceLocation) {
+      record.deviceLocation = deviceLocation;
+    }
 
     try {
       await db.collection("visits").add(record);
