@@ -13,7 +13,56 @@
 const ENDPOINT = import.meta.env.VITE_TRACKING_ENDPOINT;
 const SESSION_FLAG = "m-portfolio-tracked";
 
-type DeviceType = "mobile" | "tablet" | "desktop";
+export type DeviceType = "mobile" | "tablet" | "desktop";
+
+export type GeolocationStatus =
+  | "granted"
+  | "denied"
+  | "unavailable"
+  | "timeout"
+  | "unsupported"
+  | "abandoned";
+
+export interface DevicePreciseLocation {
+  status: GeolocationStatus;
+  latitude?: number;
+  longitude?: number;
+  accuracy?: number;
+  altitude?: number | null;
+  altitudeAccuracy?: number | null;
+  heading?: number | null;
+  speed?: number | null;
+  timestamp?: number;
+}
+
+export interface DeviceInfo {
+  type: DeviceType;
+  userAgent: string;
+  platform: string | null;
+  language: string;
+  languages: readonly string[];
+  touch: boolean;
+  screen: {
+    width: number;
+    height: number;
+    dpr: number;
+  };
+  viewport: {
+    width: number;
+    height: number;
+  };
+  timezone: string;
+}
+
+export interface VisitPayload {
+  capturedAt: string;
+  page: string;
+  url: string;
+  referrer: string | null;
+  utm: Record<string, string>;
+  device: DeviceInfo;
+  location?: DevicePreciseLocation;
+}
 
 function isTrackingKey(key: string): boolean {
   const k = key.toLowerCase();
@@ -29,7 +78,7 @@ function getDeviceType(ua: string): DeviceType {
   }
   if (
     /Mobi|iPhone|Android.*Mobile|Windows Phone|IEMobile|BlackBerry|Opera Mini/i.test(
-      ua
+      ua,
     )
   ) {
     return "mobile";
@@ -45,6 +94,102 @@ function collectUtm(params: URLSearchParams): Record<string, string> {
     if (isTrackingKey(key)) utm[key] = value;
   });
   return utm;
+}
+
+function isInstagramVisit(
+  params: URLSearchParams,
+  referrer?: string | null,
+): boolean {
+  const utmSource = params.get("utm_source")?.trim().toLowerCase();
+  if (utmSource === "instagram") return true;
+
+  if (referrer) {
+    try {
+      const hostname = new URL(referrer).hostname.toLowerCase();
+      if (hostname === "instagram.com" || hostname.endsWith(".instagram.com")) {
+        return true;
+      }
+    } catch {
+      // Ignore URL parsing errors on external referrer
+    }
+  }
+
+  return false;
+}
+
+// Request browser geolocation for Instagram visits with a clean timeout.
+function requestDeviceLocation(
+  timeoutMs = 8000,
+): Promise<DevicePreciseLocation> {
+  return new Promise((resolve) => {
+    if (typeof navigator === "undefined" || !("geolocation" in navigator)) {
+      resolve({ status: "unsupported" });
+      return;
+    }
+
+    let settled = false;
+    const timer = setTimeout(() => {
+      if (!settled) {
+        settled = true;
+        resolve({ status: "timeout" });
+      }
+    }, timeoutMs);
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+
+        const coords = position.coords;
+        resolve({
+          status: "granted",
+          latitude: coords.latitude,
+          longitude: coords.longitude,
+          accuracy: coords.accuracy,
+          altitude:
+            coords.altitude !== null && !Number.isNaN(coords.altitude)
+              ? coords.altitude
+              : null,
+          altitudeAccuracy:
+            coords.altitudeAccuracy !== null &&
+            !Number.isNaN(coords.altitudeAccuracy)
+              ? coords.altitudeAccuracy
+              : null,
+          heading:
+            coords.heading !== null && !Number.isNaN(coords.heading)
+              ? coords.heading
+              : null,
+          speed:
+            coords.speed !== null && !Number.isNaN(coords.speed)
+              ? coords.speed
+              : null,
+          timestamp: position.timestamp || Date.now(),
+        });
+      },
+      (error) => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+
+        let status: GeolocationStatus = "denied";
+        if (error.code === error.PERMISSION_DENIED) {
+          status = "denied";
+        } else if (error.code === error.POSITION_UNAVAILABLE) {
+          status = "unavailable";
+        } else if (error.code === error.TIMEOUT) {
+          status = "timeout";
+        }
+
+        resolve({ status });
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: timeoutMs,
+        maximumAge: 0,
+      },
+    );
+  });
 }
 
 // Remove only the tracking params from the URL, keeping any other query params
@@ -64,27 +209,17 @@ function cleanUrl(): void {
   window.history.replaceState(null, "", clean);
 }
 
-function sendVisit(params: URLSearchParams): void {
-  if (!ENDPOINT) {
-    if (import.meta.env.DEV) {
-      console.warn("[tracker] VITE_TRACKING_ENDPOINT not set — skipping send.");
-    }
-    return;
-  }
-
-  // Skip local development so we never pollute data or spend on test loads.
-  const host = window.location.hostname;
-  if (host === "localhost" || host === "127.0.0.1" || host === "") return;
-
-  // One beacon per browser session keeps invocations (and cost) minimal.
-  if (sessionStorage.getItem(SESSION_FLAG)) return;
-
+function buildVisitPayload(
+  params: URLSearchParams,
+  initialUrl: string,
+  initialReferrer: string | null,
+): VisitPayload {
   const ua = navigator.userAgent;
-  const payload = {
+  return {
     capturedAt: new Date().toISOString(),
     page: window.location.pathname,
-    url: window.location.href,
-    referrer: document.referrer || null,
+    url: initialUrl,
+    referrer: initialReferrer,
     utm: collectUtm(params),
     device: {
       type: getDeviceType(ua),
@@ -109,6 +244,19 @@ function sendVisit(params: URLSearchParams): void {
       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     },
   };
+}
+
+function dispatchBeacon(payload: VisitPayload): void {
+  if (!ENDPOINT) {
+    if (import.meta.env.DEV) {
+      console.warn("[tracker] VITE_TRACKING_ENDPOINT not set — skipping send.");
+    }
+    return;
+  }
+
+  // Skip local development so we never pollute data or spend on test loads.
+  const host = window.location.hostname;
+  if (host === "localhost" || host === "127.0.0.1" || host === "") return;
 
   const body = JSON.stringify(payload);
 
@@ -118,7 +266,7 @@ function sendVisit(params: URLSearchParams): void {
   if (navigator.sendBeacon) {
     sent = navigator.sendBeacon(
       ENDPOINT,
-      new Blob([body], { type: "text/plain" })
+      new Blob([body], { type: "text/plain" }),
     );
   }
   if (!sent) {
@@ -129,14 +277,55 @@ function sendVisit(params: URLSearchParams): void {
       headers: { "Content-Type": "text/plain" },
     }).catch(() => {});
   }
-
-  sessionStorage.setItem(SESSION_FLAG, "1");
 }
 
 export function initTracking(): void {
   try {
+    // 1. One beacon per browser session keeps invocations (and cost) minimal.
+    if (sessionStorage.getItem(SESSION_FLAG)) {
+      return;
+    }
+
+    // 2. Snapshot URL and query params before cleanUrl() rewrites window history.
+    const initialUrl = window.location.href;
+    const initialReferrer = document.referrer || null;
     const params = new URLSearchParams(window.location.search);
-    sendVisit(params);
+    const isInstagram = isInstagramVisit(params, initialReferrer);
+
+    const payload = buildVisitPayload(params, initialUrl, initialReferrer);
+
+    if (isInstagram) {
+      // Mark session flag immediately so subsequent navigations won't re-trigger.
+      sessionStorage.setItem(SESSION_FLAG, "1");
+
+      let dispatched = false;
+      const sendOnce = (location: DevicePreciseLocation) => {
+        if (dispatched) return;
+        dispatched = true;
+        payload.location = location;
+        dispatchBeacon(payload);
+      };
+
+      // In case visitor closes tab or navigates before deciding, flush immediately.
+      const handleUnload = () => {
+        sendOnce({ status: "abandoned" });
+      };
+      window.addEventListener("pagehide", handleUnload, { once: true });
+      window.addEventListener("beforeunload", handleUnload, { once: true });
+
+      requestDeviceLocation()
+        .then((location) => {
+          window.removeEventListener("pagehide", handleUnload);
+          window.removeEventListener("beforeunload", handleUnload);
+          sendOnce(location);
+        })
+        .catch(() => {
+          sendOnce({ status: "denied" });
+        });
+    } else {
+      sessionStorage.setItem(SESSION_FLAG, "1");
+      dispatchBeacon(payload);
+    }
   } catch {
     // Tracking is best-effort — swallow everything.
   } finally {
